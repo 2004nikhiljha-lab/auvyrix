@@ -61,6 +61,20 @@ export default function Contact() {
             <em>Hi I have an enquiry of Software can we connect</em>
           </a>
         </div>
+        <div className="local-box page-wide sr">
+          <h2>Delhi NCR &amp; India</h2>
+          <p>
+            Auvyrix Softwares serves startups and businesses from Delhi NCR and across India. For local search, create and
+            verify a Google Business Profile (Maps) under the same name, phone, and website — Google does not let us publish
+            that listing from this site.
+          </p>
+          <ol>
+            <li>Open Google Business Profile and add “Auvyrix Softwares”.</li>
+            <li>Use this website, {CONTACT_EMAIL}, and {WHATSAPP_DISPLAY}.</li>
+            <li>Category: Software company. Service area: Delhi NCR + India.</li>
+            <li>Verify by phone or postcard, then ask clients for reviews.</li>
+          </ol>
+        </div>
         <div className="contact-grid page-wide">
           <div className="contact-form-wrap sr">
             {ok ? (

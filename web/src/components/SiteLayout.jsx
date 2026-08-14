@@ -72,12 +72,17 @@ function Shell() {
           </li>
           <li>
             <NavLink to="/solutions" onClick={closeMenu}>
-              Solutions
+              Services
             </NavLink>
           </li>
           <li>
             <NavLink to="/work" onClick={closeMenu}>
               Work
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/guides" onClick={closeMenu}>
+              Guides
             </NavLink>
           </li>
           <li>
@@ -89,6 +94,18 @@ function Shell() {
             <NavLink to="/contact" onClick={closeMenu}>
               Contact
             </NavLink>
+          </li>
+          <li className="nav-links-cta">
+            <button
+              className="btn"
+              type="button"
+              onClick={() => {
+                closeMenu()
+                openLead()
+              }}
+            >
+              Start a project
+            </button>
           </li>
         </ul>
         <div className="nav-actions">
@@ -115,7 +132,8 @@ function Shell() {
                 </div>
               </div>
               <p className="foot-desc">
-                Early-stage software studio in India — apps, websites, CRMs, and custom systems. Not GST-registered at this time.
+                Software development company in Delhi, India — affordable websites, web apps, mobile apps, and custom software
+                for startups. Not GST-registered at this time.
               </p>
               <div className="foot-contact">
                 <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
@@ -126,9 +144,17 @@ function Shell() {
             </div>
             <div className="foot-cols">
               <div className="foot-links">
-                <Link to="/solutions">Solutions</Link>
+                <Link to="/services/software-development">Software</Link>
+                <Link to="/services/web-development">Web apps</Link>
+                <Link to="/services/mobile-app-development">Mobile apps</Link>
+                <Link to="/services/website-development">Websites</Link>
+                <Link to="/services/custom-software">Custom software</Link>
+                <Link to="/work">Portfolio</Link>
+                <Link to="/guides">Guides</Link>
+              </div>
+              <div className="foot-links">
+                <Link to="/solutions">All services</Link>
                 <Link to="/system">System</Link>
-                <Link to="/work">Work</Link>
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
               </div>
@@ -145,7 +171,9 @@ function Shell() {
               Quotes are professional service fees. GST invoices are issued only after GST registration. Timelines depend on the brief
               you share.
             </p>
-            <p className="foot-copy">© {new Date().getFullYear()} Auvyrix Softwares. All rights reserved.</p>
+            <p className="foot-copy">
+              © {new Date().getFullYear()} Auvyrix Softwares · Delhi NCR, India. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

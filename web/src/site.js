@@ -8,17 +8,24 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_E164}?text=${encodeURIComp
 
 export const SEO = {
   '/': {
-    title: 'Auvyrix Softwares | Custom Apps, Websites & CRM',
+    title: 'Auvyrix Softwares — Affordable Software, Website & App Development',
     description:
-      'Auvyrix Softwares is an India-based software studio. We build mobile apps, websites, custom CRMs, and internal systems for startups and growing teams.',
+      'Auvyrix Softwares in Delhi, India builds affordable custom websites, web applications, mobile apps and software for startups and businesses.',
   },
   '/solutions': {
-    title: 'Software Solutions | Auvyrix Softwares',
-    description: 'Apps, websites, CRMs, e-commerce, ERP, and AI automation — tailored software, not generic packages.',
+    title: 'Software Services | Auvyrix Softwares',
+    description:
+      'Software development, web applications, mobile apps, and website development — affordable custom builds for startups and businesses.',
+  },
+  '/guides': {
+    title: 'Software & App Development Guides | Auvyrix Softwares',
+    description:
+      'Pricing, website vs web app, and MVP guides for Indian startups from Auvyrix Softwares — a Delhi NCR software studio.',
   },
   '/work': {
-    title: 'Work | Auvyrix Softwares',
-    description: 'Selected product work from Auvyrix Softwares — CRMs, mobile apps, websites, and custom operations software.',
+    title: 'Portfolio | Auvyrix Softwares',
+    description:
+      'Software, website, and app projects by Auvyrix Softwares — problem, solution, technologies, features, and results.',
   },
   '/system': {
     title: 'How we work | Auvyrix Softwares',
@@ -30,7 +37,8 @@ export const SEO = {
   },
   '/contact': {
     title: 'Contact | Auvyrix Softwares',
-    description: 'Email codekraft@outlook.com or WhatsApp +91 97179 17758 to enquire about custom software.',
+    description:
+      'Contact Auvyrix Softwares in Delhi NCR — email codekraft@outlook.com or WhatsApp +91 97179 17758 for software, website, and app development.',
   },
   '/privacy': {
     title: 'Privacy Policy | Auvyrix Softwares',

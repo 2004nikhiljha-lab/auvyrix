@@ -48,10 +48,10 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-.02em}
 .btn-dark svg{width:14px;height:14px;flex-shrink:0}
 
 /* â•â• NAV â•â• */
-.nav{position:fixed;width:100%;z-index:100;top:0;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .3s}
+.nav{position:fixed;width:100%;z-index:100;top:0;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid transparent;transition:all .3s;box-sizing:border-box}
 .nav.scrolled{background:rgba(5,5,5,.92);backdrop-filter:blur(20px);border-bottom-color:var(--wbdr)}
-.nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo img{width:38px;height:38px;border-radius:10px;object-fit:cover;box-shadow:0 0 18px rgba(26,95,255,.28)}
+.nav-logo{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.nav-logo img{width:38px;height:38px;border-radius:10px;object-fit:cover;box-shadow:0 0 18px rgba(26,95,255,.28);flex-shrink:0}
 .nav-brand{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;letter-spacing:-.01em;color:#fff;text-transform:uppercase}
 .nav-brand em{font-style:normal;color:var(--blue)}
 .nav-links{display:flex;gap:28px;list-style:none}
@@ -275,7 +275,7 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-.02em}
 .inc-hd h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--ink);margin-bottom:8px}
 .inc-hd p{font-size:16px;color:var(--mid);font-weight:300}
 .inc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}
-.ic{padding:28px 24px;background:#fff;border:1px solid var(--g3);border-radius:16px;display:flex;flex-direction:column;transition:all .22s}
+.ic{padding:28px 24px;background:#fff;border:1px solid var(--g3);border-radius:16px;display:flex;flex-direction:column;transition:all .22s;color:inherit}
 .ic:hover{border-color:rgba(26,95,255,.25);box-shadow:0 8px 28px rgba(0,0,0,.08);transform:translateY(-2px)}
 .ic-ico{width:40px;height:40px;background:rgba(26,95,255,.08);border:1px solid rgba(26,95,255,.18);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .ic-ico svg{stroke:var(--blue);width:18px;height:18px}
@@ -382,8 +382,6 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-.02em}
   .foot-top{flex-direction:column;gap:24px}
   .foot-bot{flex-direction:column;align-items:flex-start}
   .agit{padding:72px 24px}
-  .nav{padding:14px 20px}
-  .nav-links{display:none}
   .mq-item{padding:12px 20px;font-size:12px}
 }
 @media(max-width:600px){

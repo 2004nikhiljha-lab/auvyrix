@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { useLead } from '../context/LeadContext.jsx'
 import { SERVICES, STEPS, WORK } from '../data.js'
+import { GUIDES } from '../guides.js'
 
 const Arrow = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -16,7 +17,6 @@ export default function Landing() {
   const stageRef = useRef(null)
 
   useEffect(() => {
-    document.title = 'Auvyrix Softwares | Software that looks as premium as it ships'
     const tick = setInterval(() => setLive((n) => n + 1), 2800)
     const v = document.getElementById('v1')
     if (v) {
@@ -81,25 +81,26 @@ export default function Landing() {
             <h1 className="hf hero-h">
               <span className="anim-line">
                 <span className="anim-line-inner" style={{ animationDelay: '.12s' }}>
-                  Software that looks
+                  Affordable software,
                 </span>
               </span>
               <span className="anim-line">
                 <span className="anim-line-inner dim" style={{ animationDelay: '.28s' }}>
-                  as premium as it ships.
+                  websites &amp; apps.
                 </span>
               </span>
             </h1>
             <p className="hero-sub anim-fade-up" style={{ animationDelay: '.45s' }}>
-              Auvyrix designs and builds apps, websites, CRMs, and custom platforms for teams that refuse generic tools.
+              Auvyrix Softwares builds affordable custom websites, web applications, mobile apps and software for startups and
+              businesses.
             </p>
             <div className="hero-acts anim-fade-up" style={{ animationDelay: '.58s' }}>
               <button className="btn btn-pulse btn-shine" type="button" onClick={openLead}>
                 Tell us what you want
                 <Arrow />
               </button>
-              <Link className="btn-ghost btn-ghost-glow" to="/solutions">
-                Browse solutions
+              <Link className="btn-ghost btn-ghost-glow" to="/services/software-development">
+                Browse services
               </Link>
             </div>
             <div className="hero-trust anim-fade-up" style={{ animationDelay: '.72s' }}>
@@ -184,13 +185,18 @@ export default function Landing() {
       <section className="agit agit-motion">
         <div className="agit-inner sr">
           <h2>
-            Templates are not a product strategy.
+            Software development in Delhi, India.
             <br />
-            <em className="agit-em">A system is.</em>
+            <em className="agit-em">Websites, web apps, mobile apps, custom software.</em>
           </h2>
           <p>
-            Most companies buy software that almost fits — then hire people to work around it. You need a studio that asks what
-            you want, respects the budget, and builds the actual system.
+            Auvyrix Softwares is a Delhi NCR studio. We build affordable custom software for startups and businesses across
+            India — not a template with a new logo.{' '}
+            <Link to="/services/software-development">Software development</Link>,{' '}
+            <Link to="/services/website-development">website development</Link>,{' '}
+            <Link to="/services/web-development">web applications</Link>,{' '}
+            <Link to="/services/mobile-app-development">mobile apps</Link>, and{' '}
+            <Link to="/services/custom-software">custom software</Link>.
           </p>
         </div>
       </section>
@@ -198,14 +204,22 @@ export default function Landing() {
       <section className="inc home-preview">
         <div className="inc-inner">
           <div className="inc-hd sr">
-            <h2>Eight solutions clients ask for first.</h2>
+            <h2>Affordable website, web app and mobile app development.</h2>
             <p>
-              The catalogue is wider. <Link to="/solutions">See all solutions →</Link>
+              Five service pages, one studio.{' '}
+              <Link to="/solutions">See all services →</Link>
             </p>
+          </div>
+          <div className="kw-row sr">
+            <Link to="/services/software-development">Software development</Link>
+            <Link to="/services/website-development">Website development</Link>
+            <Link to="/services/web-development">Web applications</Link>
+            <Link to="/services/mobile-app-development">Mobile apps</Link>
+            <Link to="/services/custom-software">Custom software</Link>
           </div>
           <div className="inc-grid">
             {SERVICES.slice(0, 4).map((item, i) => (
-              <div className="ic lift ic-stagger sr" style={{ '--d': `${i * 0.08}s` }} key={item.h}>
+              <Link className="ic lift ic-stagger sr" style={{ '--d': `${i * 0.08}s` }} key={item.h} to={item.href}>
                 <div className="ic-ico">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="1.8">
                     <path d={item.ico} />
@@ -214,7 +228,7 @@ export default function Landing() {
                 <div className="ic-h">{item.h}</div>
                 <div className="ic-d">{item.d}</div>
                 <div className="ic-tag">{item.tag}</div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -223,7 +237,7 @@ export default function Landing() {
       <section className="sys home-steps">
         <div className="sys-inner">
           <div className="sys-hd sr">
-            <h2>How an Auvyrix build works.</h2>
+            <h2>How we build software for startups.</h2>
             <p>
               Brief in. Scope honest. Software that ships. <Link to="/system">Full system →</Link>
             </p>
@@ -245,14 +259,15 @@ export default function Landing() {
       <section className="work-preview">
         <div className="work-preview-inner">
           <div className="inc-hd sr">
-            <h2>Work that changed how teams operate.</h2>
+            <h2>Software and app development portfolio.</h2>
             <p>
-              Real briefs. Shipped systems. <Link to="/work">View work →</Link>
+              Problem, solution, stack, features, result.{' '}
+              <Link to="/work">View portfolio →</Link>
             </p>
           </div>
           <div className="work-grid">
             {WORK.slice(0, 3).map((w, i) => (
-              <article className="work-card sr lift work-tilt" style={{ '--d': `${i * 0.1}s` }} key={w.client}>
+              <Link className="work-card sr lift work-tilt" style={{ '--d': `${i * 0.1}s` }} key={w.slug} to={`/work/${w.slug}`}>
                 <div className="work-img-w">
                   <img className="img-f" src={w.img} alt={w.client} />
                   <div className="work-shine" aria-hidden />
@@ -262,7 +277,30 @@ export default function Landing() {
                   <h3>{w.client}</h3>
                   <p>{w.result}</p>
                 </div>
-              </article>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="work-preview">
+        <div className="work-preview-inner">
+          <div className="inc-hd sr">
+            <h2>Guides for startup founders.</h2>
+            <p>
+              Pricing, website vs web app, MVP cuts.{' '}
+              <Link to="/guides">All guides →</Link>
+            </p>
+          </div>
+          <div className="work-grid">
+            {GUIDES.map((g) => (
+              <Link className="work-card sr lift" to={`/guides/${g.slug}`} key={g.slug}>
+                <div className="work-meta">
+                  <span className="ic-tag">Guide</span>
+                  <h3>{g.title}</h3>
+                  <p>{g.description}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -279,14 +317,13 @@ export default function Landing() {
         </div>
         <div className="cta-in sr">
           <h2 className="cta-title">
-            NAME THE BUILD.
+            START A SOFTWARE PROJECT
             <br />
-            <span className="gc">WE WILL TELL YOU</span>
-            <br />
-            IF IT IS REAL.
+            <span className="gc">IN DELHI OR ANYWHERE IN INDIA.</span>
           </h2>
           <p>
-            Apps. Websites. CRMs. Custom software. <strong>One brief. One specialist.</strong>
+            Software development, websites, web apps, mobile apps, custom software.{' '}
+            <strong>One brief. One specialist.</strong>
           </p>
           <button className="btn btn-pulse btn-shine" type="button" onClick={openLead} style={{ padding: '18px 48px', fontSize: 14 }}>
             Start a project
