@@ -14,7 +14,16 @@
     "dev:web": "npm run dev -w auvyrix-web",
     "dev:crm": "npm run dev -w auvyrix-crm",
     "build": "npm run build -w auvyrix-web && npm run build -w auvyrix-crm",
-    "start": "npm run start -w auvyrix-server"
+    "start": "node scripts/start.js",
+    "start:api": "node server/index.js",
+    "start:crm": "node scripts/start-crm.js",
+    "start:web": "node scripts/start-web.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"

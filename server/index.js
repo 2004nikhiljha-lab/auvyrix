@@ -1,15 +1,43 @@
+import path from 'path'
+import { fileURLToPath } from 'url'
+import dotenv from 'dotenv'
 import express from 'express'
 import cors from 'cors'
 import jwt from 'jsonwebtoken'
 import { connectDb, seedIfEmpty, STATUSES, nid, bcrypt, User, Lead } from './db.js'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+dotenv.config({ path: path.join(__dirname, '.env') })
 
 const app = express()
 const PORT = process.env.PORT || 4100
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/auvyrix'
 const JWT_SECRET = process.env.JWT_SECRET || 'auvyrix-dev-secret-change-in-production'
+const CORS_ORIGIN = (process.env.CORS_ORIGIN || '')
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean)
 
-app.use(cors())
+const defaultOrigins = [
+  'https://crm.auvyrixsoftware.com',
+  'https://auvyrixsoftware.com',
+  'https://www.auvyrixsoftware.com',
+  'https://api.auvyrixsoftware.com',
+]
+app.set('trust proxy', 1)
+app.use(
+  cors({
+    origin(origin, cb) {
+      if (!origin) return cb(null, true)
+      const allowed = new Set([
+        ...(CORS_ORIGIN.length ? CORS_ORIGIN : defaultOrigins),
+        'http://localhost:5174',
+        'http://localhost:5175',
+      ])
+      cb(null, allowed.has(origin))
+    },
+  }),
+)
 app.use(express.json({ limit: '1mb' }))
 
 function signUser(user) {
@@ -55,6 +83,10 @@ const BUDGET_OPTIONS = [
 
 app.get('/api/health', (_req, res) =>
   res.json({ ok: true, brand: 'Auvyrix Softwares', db: 'mongodb' }),
+)
+
+app.get('/', (_req, res) =>
+  res.json({ ok: true, service: 'auvyrix-api', health: '/api/health' }),
 )
 
 app.get('/api/meta', (_req, res) => {
@@ -226,12 +258,11 @@ async function start() {
   try {
     await connectDb(MONGODB_URI)
     await seedIfEmpty()
-    app.listen(PORT, () => {
-      console.log(`Auvyrix API (backend only) → http://localhost:${PORT}`)
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`Auvyrix API → port ${PORT}`)
     })
   } catch (err) {
-    console.error('\nFailed to start API. Is MongoDB running locally?')
-    console.error(`Tried URI: ${MONGODB_URI}`)
+    console.error('\nFailed to start API. Check MONGODB_URI in server/.env (MongoDB Atlas).')
     console.error(err.message)
     process.exit(1)
   }

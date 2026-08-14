@@ -12,20 +12,28 @@ export function nid(prefix) {
 export async function connectDb(uri) {
   mongoose.set('strictQuery', true)
   await mongoose.connect(uri)
-  console.log(`MongoDB connected → ${uri}`)
+  console.log('MongoDB connected')
 }
 
 export async function seedIfEmpty() {
   const users = await User.countDocuments()
   if (users === 0) {
-    await User.create({
-      name: 'Auvyrix Admin',
-      email: 'admin@auvyrix.com',
-      passwordHash: bcrypt.hashSync('Auvyrix@2026', 10),
-      role: 'admin',
-    })
-    console.log('Seeded admin → admin@auvyrix.com / Auvyrix@2026')
+    const email = String(process.env.ADMIN_EMAIL || '').trim().toLowerCase()
+    const password = String(process.env.ADMIN_PASSWORD || '')
+    if (!email || !password) {
+      console.warn('No users in database. Set ADMIN_EMAIL and ADMIN_PASSWORD to create the first admin.')
+    } else {
+      await User.create({
+        name: process.env.ADMIN_NAME || 'Auvyrix Admin',
+        email,
+        passwordHash: bcrypt.hashSync(password, 10),
+        role: 'admin',
+      })
+      console.log(`Seeded admin → ${email}`)
+    }
   }
+
+  if (!/127\.0\.0\.1|localhost/.test(process.env.MONGODB_URI || '')) return
 
   const leads = await Lead.countDocuments()
   if (leads === 0) {

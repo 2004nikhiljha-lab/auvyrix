@@ -5,7 +5,7 @@ import { SITE_URL } from '../config.js'
 
 export default function Login() {
   const nav = useNavigate()
-  const [email, setEmail] = useState('admin@auvyrix.com')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [err, setErr] = useState('')
   const [busy, setBusy] = useState(false)
@@ -38,7 +38,14 @@ export default function Login() {
         <form className="pop-form" onSubmit={submit}>
           <div className="fl">
             <span>Email</span>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" required />
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              required
+              autoComplete="username"
+              placeholder="Email"
+            />
           </div>
           <div className="fl">
             <span>Password</span>
@@ -48,6 +55,7 @@ export default function Login() {
               type="password"
               required
               placeholder="Password"
+              autoComplete="current-password"
             />
           </div>
           {err ? <div className="form-err">{err}</div> : null}
@@ -55,9 +63,6 @@ export default function Login() {
             {busy ? 'Signing in…' : 'Enter dashboard'}
           </button>
         </form>
-        <p className="pop-note" style={{ marginTop: 16 }}>
-          Default: admin@auvyrix.com / Auvyrix@2026
-        </p>
         <p style={{ marginTop: 18, textAlign: 'center' }}>
           <a className="nav-crm" href={SITE_URL}>
             ← Back to main site
