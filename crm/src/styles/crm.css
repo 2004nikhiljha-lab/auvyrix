@@ -1,0 +1,117 @@
+.crm-shell{
+  min-height:100vh;display:grid;grid-template-columns:248px 1fr;background:#07080c;color:#e8eaf0;
+  font-family:Inter,sans-serif;
+}
+.crm-side{
+  border-right:1px solid rgba(255,255,255,.07);padding:22px 16px;display:flex;flex-direction:column;gap:8px;
+  background:#050505;position:sticky;top:0;height:100vh;
+}
+.crm-brand{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;letter-spacing:-.02em;font-size:15px;padding:6px 10px 18px;color:#fff;display:flex;align-items:center;gap:10px}
+.crm-brand img{width:36px;height:36px;border-radius:10px;object-fit:cover;flex-shrink:0}
+.crm-brand em{font-style:normal;color:#1A5FFF}
+.crm-nav{display:flex;flex-direction:column;gap:4px;flex:1}
+.crm-nav a,.crm-nav button{
+  display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;color:rgba(255,255,255,.5);
+  font-size:13px;font-weight:600;text-align:left;background:transparent;border:none;cursor:pointer;text-decoration:none;
+  font-family:'Plus Jakarta Sans',sans-serif;
+}
+.crm-nav a:hover,.crm-nav button:hover{background:rgba(255,255,255,.05);color:#fff}
+.crm-nav a.active{background:rgba(26,95,255,.16);color:#fff;border:1px solid rgba(26,95,255,.28)}
+.crm-user{padding:12px;border-top:1px solid rgba(255,255,255,.07);font-size:12px;color:rgba(255,255,255,.45)}
+.crm-user strong{display:block;color:#fff;font-size:13px;margin-bottom:2px}
+.crm-main{min-width:0;display:flex;flex-direction:column}
+.crm-top{
+  display:flex;justify-content:space-between;align-items:center;padding:18px 28px;
+  border-bottom:1px solid rgba(255,255,255,.07);background:rgba(5,5,5,.72);backdrop-filter:blur(16px);position:sticky;top:0;z-index:5
+}
+.crm-top h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.crm-top p{font-size:12px;color:rgba(255,255,255,.4);margin-top:2px}
+.crm-body{padding:28px;flex:1}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.stat{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px 18px
+}
+.stat b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;color:#fff;letter-spacing:-.03em}
+.stat span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:700;font-family:'Plus Jakarta Sans',sans-serif}
+.panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden}
+.panel-hd{padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.filters{display:flex;gap:8px;flex-wrap:wrap;flex:1}
+.filter-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;width:100%}
+.filter-select{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#fff;padding:10px 12px;font-size:13px;min-width:150px
+}
+.filter-select option{background:#111;color:#fff}
+.chip{
+  border:1px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.55);border-radius:100px;
+  padding:7px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif
+}
+.chip.on{background:#1A5FFF;border-color:#1A5FFF;color:#fff}
+.search{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#fff;padding:10px 12px;min-width:220px;font-size:13px
+}
+table.leads{width:100%;border-collapse:collapse}
+table.leads th{text-align:left;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:12px 16px;font-family:'Plus Jakarta Sans',sans-serif}
+table.leads td{padding:14px 16px;border-top:1px solid rgba(255,255,255,.06);font-size:13px;vertical-align:middle}
+table.leads tr{cursor:pointer}
+table.leads tbody tr:hover{background:rgba(255,255,255,.04)}
+.muted{color:rgba(255,255,255,.45);font-size:12px}
+.badge{
+  display:inline-flex;align-items:center;padding:4px 10px;border-radius:100px;font-size:11px;font-weight:700;
+  font-family:'Plus Jakarta Sans',sans-serif;text-transform:capitalize
+}
+.st-new{background:rgba(26,95,255,.16);color:#93c5fd}
+.st-contacted{background:rgba(234,179,8,.14);color:#fde68a}
+.st-qualified{background:rgba(16,185,129,.14);color:#6ee7b7}
+.st-proposal{background:rgba(168,85,247,.16);color:#d8b4fe}
+.st-won{background:rgba(34,197,94,.16);color:#86efac}
+.st-lost{background:rgba(239,68,68,.14);color:#fca5a5}
+.drawer-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);z-index:40;display:flex;justify-content:flex-end}
+.drawer{width:min(480px,100%);background:#0d0f14;border-left:1px solid rgba(255,255,255,.1);height:100%;overflow:auto;padding:24px}
+.drawer h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;margin-bottom:4px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.field span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:700}
+.field input,.field select,.field textarea{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:11px 12px;color:#fff;font-size:14px
+}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 18px}
+.btn-crm{
+  background:#1A5FFF;color:#fff;border:none;border-radius:100px;padding:11px 18px;font-weight:700;font-size:12px;
+  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif
+}
+.btn-ghost-crm{
+  background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:11px 18px;
+  font-size:12px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif
+}
+.note{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;margin-bottom:8px}
+.login-wrap{min-height:100vh;display:grid;place-items:center;background:#050505;padding:24px;position:relative;overflow:hidden}
+.login-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 50% 0%,rgba(26,95,255,.18),transparent 70%)}
+.login-card{position:relative;width:min(420px,100%);background:#111;border:1px solid rgba(255,255,255,.1);border-top:2px solid #1A5FFF;border-radius:24px;padding:40px 36px}
+.login-card h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;color:#fff;margin-bottom:8px}
+.login-card p{color:rgba(255,255,255,.45);font-size:14px;margin-bottom:22px;line-height:1.6}
+.empty{padding:48px 20px;text-align:center;color:rgba(255,255,255,.4)}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+button,a{cursor:pointer;font-family:inherit;text-decoration:none;border:none;background:none}
+body{font-family:Inter,sans-serif;background:#050505;color:#fff}
+.nav-brand{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;letter-spacing:-.01em;color:#fff;text-transform:uppercase}
+.nav-brand em{font-style:normal;color:#1A5FFF}
+.nav-crm{font-size:13px;font-weight:500;color:rgba(255,255,255,.5)}
+.nav-crm:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;background:#1A5FFF;color:#fff;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:100px;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.pop-form{text-align:left;display:flex;flex-direction:column;gap:14px;margin-top:4px}
+.fl{display:flex;flex-direction:column;gap:6px}
+.fl span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);font-family:'Plus Jakarta Sans',sans-serif}
+.fl input,.fl select,.fl textarea{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 14px;color:#fff;font-size:14px;outline:none
+}
+.fl input:focus,.fl select:focus,.fl textarea:focus{border-color:#1A5FFF;box-shadow:0 0 0 3px rgba(26,95,255,.18)}
+.form-err{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#fca5a5;border-radius:12px;padding:10px 12px;font-size:13px}
+.pop-note{margin-top:12px;font-size:10px;color:rgba(255,255,255,.25);letter-spacing:.08em;text-transform:uppercase;font-family:'Plus Jakarta Sans',sans-serif}
+
+@media(max-width:900px){
+  .crm-shell{grid-template-columns:1fr}
+  .crm-side{position:relative;height:auto}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  table.leads{display:block;overflow:auto}
+}

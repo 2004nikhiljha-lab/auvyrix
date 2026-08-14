@@ -1,0 +1,22 @@
+{
+  "name": "auvyrix-softwares",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": [
+    "server",
+    "web",
+    "crm"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web,crm -c blue,magenta,green \"npm run dev -w auvyrix-server\" \"npm run dev -w auvyrix-web\" \"npm run dev -w auvyrix-crm\"",
+    "dev:server": "npm run dev -w auvyrix-server",
+    "dev:web": "npm run dev -w auvyrix-web",
+    "dev:crm": "npm run dev -w auvyrix-crm",
+    "build": "npm run build -w auvyrix-web && npm run build -w auvyrix-crm",
+    "start": "npm run start -w auvyrix-server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
