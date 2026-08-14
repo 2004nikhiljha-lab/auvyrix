@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router'
 import { LeadProvider, useLead } from '../context/LeadContext.jsx'
 import LeadModal from './LeadModal.jsx'
+import Seo from './Seo.jsx'
+import WhatsAppFloat from './WhatsAppFloat.jsx'
+import { CONTACT_EMAIL, WHATSAPP_DISPLAY, WHATSAPP_URL } from '../site.js'
 import '../styles/landing.css'
 import '../styles/pages.css'
 
@@ -106,29 +109,47 @@ function Shell() {
           <div className="foot-top">
             <div>
               <div className="foot-logo">
-                <img src="/logo.png" alt="Auvyrix" />
+                <img src="/logo.png" alt="Auvyrix Softwares" />
                 <div className="foot-brand">
                   AUVYRIX <em>SOFTWARES</em>
                 </div>
               </div>
               <p className="foot-desc">
-                A technology studio for apps, websites, CRMs, and custom systems — built to look expensive and work harder.
+                Early-stage software studio in India — apps, websites, CRMs, and custom systems. Not GST-registered at this time.
               </p>
+              <div className="foot-contact">
+                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  WhatsApp {WHATSAPP_DISPLAY}
+                </a>
+              </div>
             </div>
-            <div className="foot-links">
-              <Link to="/solutions">Solutions</Link>
-              <Link to="/system">System</Link>
-              <Link to="/work">Work</Link>
-              <Link to="/about">About</Link>
-              <Link to="/contact">Contact</Link>
+            <div className="foot-cols">
+              <div className="foot-links">
+                <Link to="/solutions">Solutions</Link>
+                <Link to="/system">System</Link>
+                <Link to="/work">Work</Link>
+                <Link to="/about">About</Link>
+                <Link to="/contact">Contact</Link>
+              </div>
+              <div className="foot-links">
+                <Link to="/privacy">Privacy</Link>
+                <Link to="/terms">Terms</Link>
+                <Link to="/disclaimer">Disclaimer</Link>
+                <Link to="/refund-policy">Refunds</Link>
+              </div>
             </div>
           </div>
           <div className="foot-bot">
-            <p className="foot-disc">Timelines and investment depend on scope and budget shared in the brief.</p>
-            <p className="foot-copy">© {new Date().getFullYear()} Auvyrix Softwares. All Rights Reserved.</p>
+            <p className="foot-disc">
+              Quotes are professional service fees. GST invoices are issued only after GST registration. Timelines depend on the brief
+              you share.
+            </p>
+            <p className="foot-copy">© {new Date().getFullYear()} Auvyrix Softwares. All rights reserved.</p>
           </div>
         </div>
       </footer>
+      <WhatsAppFloat />
       <LeadModal />
     </>
   )
@@ -138,6 +159,7 @@ export default function SiteLayout() {
   return (
     <LeadProvider>
       <ScrollToTop />
+      <Seo />
       <Shell />
     </LeadProvider>
   )

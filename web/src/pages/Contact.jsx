@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import PageHero from '../components/PageHero.jsx'
 import { useLead } from '../context/LeadContext.jsx'
 import { BUDGETS, FAQ } from '../data.js'
 import { api } from '../api.js'
+import { CONTACT_EMAIL, WHATSAPP_DISPLAY, WHATSAPP_URL } from '../site.js'
 
 const WANT_OPTIONS = [
   'Mobile App',
@@ -23,10 +24,6 @@ export default function Contact() {
   const [busy, setBusy] = useState(false)
   const [err, setErr] = useState('')
   const [ok, setOk] = useState(false)
-
-  useEffect(() => {
-    document.title = 'Contact | Auvyrix Softwares'
-  }, [])
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
 
@@ -50,9 +47,20 @@ export default function Contact() {
         eyebrow="Contact"
         title="Name the build."
         titleDim="We will tell you if it is real."
-        sub="Share what you want and the budget. A specialist replies — usually within one business day."
+        sub="Email, WhatsApp, or the brief below. We usually reply within one business day."
       />
       <section className="page-section">
+        <div className="contact-channels page-wide sr">
+          <a className="contact-channel" href={`mailto:${CONTACT_EMAIL}`}>
+            <span>Email</span>
+            <strong>{CONTACT_EMAIL}</strong>
+          </a>
+          <a className="contact-channel wa" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <span>WhatsApp</span>
+            <strong>{WHATSAPP_DISPLAY}</strong>
+            <em>Hi I have an enquiry of Software can we connect</em>
+          </a>
+        </div>
         <div className="contact-grid page-wide">
           <div className="contact-form-wrap sr">
             {ok ? (

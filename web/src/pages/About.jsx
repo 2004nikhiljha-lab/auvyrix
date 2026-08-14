@@ -25,8 +25,9 @@ export default function About() {
               motion, architecture, and follow-through. We ask for the budget up front so the plan can be honest.
             </p>
             <p>
-              Discovery, design, engineering, and commercial follow-through stay in one studio. That is how leads do not get
-              lost and products do not stall at v1.
+              Auvyrix Softwares is an early-stage studio. We are not GST-registered yet and we do not display
+              certifications we do not hold. Engagements are billed as professional services; GST invoices start only
+              after we obtain a GSTIN.
             </p>
           </div>
           <div className="about-stats sr">

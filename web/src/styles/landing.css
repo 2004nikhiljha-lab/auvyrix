@@ -339,6 +339,10 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-.02em}
 .foot-brand{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:-.01em}
 .foot-brand em{font-style:normal;color:var(--blue)}
 .foot-desc{font-size:13px;color:rgba(255,255,255,.35);font-weight:300;max-width:320px;line-height:1.65}
+.foot-contact{display:flex;flex-direction:column;gap:6px;margin-top:14px}
+.foot-contact a{font-size:13px;color:rgba(255,255,255,.55);font-weight:500}
+.foot-contact a:hover{color:#fff}
+.foot-cols{display:flex;gap:36px;flex-wrap:wrap}
 .foot-links{display:flex;gap:20px;flex-wrap:wrap}
 .foot-links a{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;transition:color .18s}
 .foot-links a:hover{color:rgba(255,255,255,.8)}

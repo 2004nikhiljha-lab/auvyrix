@@ -21,7 +21,8 @@ export const WHO = [
 ]
 
 export const FAQ = [
-  { q: 'What happens after I submit the form?', a: 'A brief lands with our team instantly. An Auvyrix specialist reviews what you want and your budget, then contacts you — usually within one business day — with a clear next step.' },
+  { q: 'Are you GST registered?', a: 'Not yet. Auvyrix Softwares is an early-stage studio and does not hold GST registration at this time. Quotes are professional service fees. We do not issue GST invoices until we have a GSTIN. If registration happens later, any tax that then applies will be told to you before payment.' },
+  { q: 'What happens after I submit the form?', a: 'A brief lands with our team instantly. An Auvyrix specialist reviews what you want and your budget, then contacts you — usually within one business day — with a clear next step. You can also email codekraft@outlook.com or WhatsApp +91 97179 17758.' },
   { q: 'Do you only build from scratch?', a: 'No. We ship new products, rebuild legacy tools, and extend existing CRMs or apps. Tell us what you want — we recommend the fastest path that still looks and feels premium.' },
   { q: 'What does “100+ software solutions” mean?', a: 'We deliver across a catalogue of proven product types — apps, websites, CRMs, ERPs, commerce, automation, and custom systems — then tailor each one to your workflow instead of selling a generic package.' },
   { q: 'How do you use the budget field?', a: 'Budget tells us which architecture, team size, and timeline are realistic. We never force a package. If the budget and the ask do not match, we say so on the first call.' },
